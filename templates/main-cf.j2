@@ -36,5 +36,5 @@ alias_database = hash:/etc/aliases
 mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = loopback-only
-relayhost = {% if postfix_relayhost is defined %}{{ postfix_relayhost }}{% else %}$mydomain{% endif %}
 smtp_generic_maps = hash:/etc/postfix/generic
+relayhost = {% if postfix_relayhost is defined %}{{ postfix_relayhost }}{% else %}$mydomain{% endif %}
