@@ -50,6 +50,18 @@
     - common
     - postfix
 
+- name: Write SMTP generic maps
+  template: >
+    src=generic.j2
+    dest={{ postfix_config_dir }}/generic
+    mode=0644 owner=root group=root
+  notify:
+    - postmap generic
+  when: postfix_use_smtp and postfix_relayhost_user and postfix_relayhost_pass
+  tags:
+    - common
+    - postfix
+
 - name: Write Postfix configuration template
   template: >
     src=main-cf.j2
