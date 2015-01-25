@@ -21,7 +21,7 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 {% if postfix_use_smtp is defined and postfix_use_smtp == true %}
 # Enable SASL authentication
 smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd.db
 smtp_sasl_security_options = noanonymous
 smtp_use_tls = yes
 
