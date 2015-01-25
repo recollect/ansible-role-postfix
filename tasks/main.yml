@@ -41,7 +41,7 @@
 - name: Write SMTP authentication template
   template: >
     src=sasl_passwd.j2
-    dest={{ postfix_config_dir }}/sasl_passwd
+    dest={{ postfix_config_dir }}/sasl_passwd.db
     mode=0600 owner=root group=root
   notify:
     - postmap sasl
