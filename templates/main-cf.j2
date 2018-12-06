@@ -27,6 +27,9 @@ smtp_use_tls = yes
 
 {% endif %}
 # General
+{% if ansible_distribution_major_version == "18" %}
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
+{% endif %}
 myhostname = {{ ansible_hostname }}
 myorigin = $mydomain
 mydestination =
